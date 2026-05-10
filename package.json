@@ -1,0 +1,10 @@
+{
+  "name": "task-manager-root",
+  "version": "1.0.0",
+  "description": "Root script runner for Team Task Manager",
+  "scripts": {
+    "build:frontend": "cd frontend && npm install && npm run build",
+    "start:backend": "cd backend && .\\mvnw.cmd spring-boot:run",
+    "start": "npm run build:frontend && npm run start:backend"
+  }
+}
