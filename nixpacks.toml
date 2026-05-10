@@ -1,0 +1,13 @@
+providers = ["node", "java"]
+
+[phases.setup]
+nixPkgs = ["jdk17", "nodejs_20"]
+
+[phases.build]
+cmds = [
+    "npm run build:frontend",
+    "cd backend && chmod +x mvnw && ./mvnw clean package -DskipTests"
+]
+
+[start]
+cmd = "java -jar backend/target/task-manager-0.0.1-SNAPSHOT.jar"
