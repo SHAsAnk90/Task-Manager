@@ -4,7 +4,8 @@
   "description": "Root script runner for Team Task Manager",
   "scripts": {
     "build:frontend": "cd frontend && npm install && npm run build",
-    "start:backend": "cd backend && .\\mvnw.cmd spring-boot:run",
-    "start": "npm run build:frontend && npm run start:backend"
+    "build": "npm run build:frontend && cd backend && chmod +x mvnw && ./mvnw clean package -DskipTests",
+    "start": "java -jar backend/target/task-manager-0.0.1-SNAPSHOT.jar",
+    "dev": "npm run build:frontend && cd backend && .\\mvnw.cmd spring-boot:run"
   }
 }
